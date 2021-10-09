@@ -12,6 +12,7 @@ export class InputComponent implements OnInit {
       'Looking to discover some movies or tracks that you might like?',
     welcomeString3: 'Type your favorite movie or song here',
   };
+  public searchInput = 'Superman';
   constructor() {}
 
   ngOnInit(): void {}

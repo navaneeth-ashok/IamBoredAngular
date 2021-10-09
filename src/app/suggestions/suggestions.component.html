@@ -1,3 +1,21 @@
 <div class="container">
-    Suggestions component
+    <p>Based on your search, you might enjoy these</p>
+
+
+    <div class="" *ngIf="!isLoaded">
+        Loading
+    </div>
+    <div class="row" *ngFor="let item of suggestion?.movies">
+        <div class=`mb-3`>
+            <div class="movie parent card__custom row">
+                <h2 class="movie mt-1 mb-1 name">{{item.name}}</h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="filter-buttons mb-3" *ngFor="let item of suggestion?.sugg">
+        <button type="button" class="suggestion__buttons" value={{item.movieTitle}}>
+            {{item.movieTitle}}
+        </button>
+    </div>
 </div>

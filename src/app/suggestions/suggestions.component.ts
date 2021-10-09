@@ -1,18 +1,14 @@
-import { Component, OnInit, ɵNgModuleTransitiveScopes } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ɵNgModuleTransitiveScopes,
+} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Movie } from '../movies';
 import { Search } from '../titlesuggestions';
 import { Track } from '../tracks';
-
-export class Suggestions {
-  constructor(
-    public tracks: Track[],
-    public movies: Movie[],
-    public sugg: Search[]
-  ) {}
-}
-
-let body = new HttpParams().set('userInput', 'The Batman');
+import { Suggestions } from '../suggestions';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -26,6 +22,10 @@ const httpOptions = {
   styleUrls: ['./suggestions.component.css'],
 })
 export class SuggestionsComponent implements OnInit {
+  suggestion: Suggestions;
+  isLoaded = false;
+  @Input('inputData') public searchText: string;
+
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
@@ -33,6 +33,8 @@ export class SuggestionsComponent implements OnInit {
   }
 
   getSuggestions() {
+    let body = new HttpParams().set('userInput', this.searchText);
+
     this.httpClient
       .post<any>(
         'http://localhost:5000/fetchSuggestion',
@@ -43,7 +45,6 @@ export class SuggestionsComponent implements OnInit {
         let trackSuggestionArray = [];
         let movieSuggestionArray = [];
         let titleSuggestionArray = [];
-        console.log(resp);
         if (resp[0].tracks != undefined) {
           for (let track of resp[0].tracks) {
             let trackItem = new Track(
@@ -82,6 +83,16 @@ export class SuggestionsComponent implements OnInit {
             titleSuggestionArray.push(searchItem);
           }
         }
+
+        let suggestionItem = new Suggestions(
+          trackSuggestionArray,
+          movieSuggestionArray,
+          titleSuggestionArray
+        );
+
+        console.log(suggestionItem);
+        this.suggestion = suggestionItem;
+        this.isLoaded = true;
       });
   }
 }
