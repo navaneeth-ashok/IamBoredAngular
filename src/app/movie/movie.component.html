@@ -1,4 +1,4 @@
-<div class="col mb-3 card__master">
+<div class="col-3 mb-3 card__master">
     <div class="movie parent card__custom row">
         <h2 class="movie mt-1 mb-1 name">{{movieItem.name}}</h2>
         <div class="movie__preview col-sm-12 text-center">
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </ng-template>
-        <button type="button" (click)="toggleExpand()">
+        <button type="button" class="btn" (click)="toggleExpand()">
             <div *ngIf="isExpanded; else collapse">Collapse</div>
             <ng-template #collapse>Expand</ng-template>
         </button>

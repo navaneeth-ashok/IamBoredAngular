@@ -11,11 +11,13 @@
                 {{item.movieTitle}}
             </button>
         </div>
-        <div class="row" *ngFor="let item of suggestion?.movies">
-            <div class=`mb-3`>
-                <div class="movie parent card__custom row">
-                    <app-movie [movieData]="item"></app-movie>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 mb-3 card__master" *ngFor="let item of suggestion?.movies">
+                    <div class="movie parent card__custom row">
+                        <app-movie [movieData]="item"></app-movie>
 
+                    </div>
                 </div>
             </div>
         </div>
