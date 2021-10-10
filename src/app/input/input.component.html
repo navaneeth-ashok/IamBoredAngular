@@ -3,8 +3,14 @@
 <p>{{welcomeObj.welcomeString3}}</p>
 
 <div class="">
+
     <label for="userInput">Movie or Track</label>
-    <input autocomplete="off" class="form-control  w-25 ms-auto me-auto" type="text" id="userInput"
-        placeholder="Type a Movie or Track Name">
+    <input #searchEntry autocomplete="off" class="form-control  w-25 ms-auto me-auto" type="text" id="userInput"
+        placeholder="Type a Movie or Track Name" (change)="updateSearch(searchEntry.value)">
     <app-suggestions [inputData]="searchInput"></app-suggestions>
+    <div class="" *ngIf="searchInput === ''">
+        <p>{{welcomeObj.welcomeString4}}</p>
+        <p>{{welcomeObj.welcomeString5}}</p>
+        <p>{{welcomeObj.welcomeString6}}</p>
+    </div>
 </div>

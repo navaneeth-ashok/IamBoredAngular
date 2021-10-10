@@ -1,7 +1,9 @@
 import {
   Component,
   Input,
+  OnChanges,
   OnInit,
+  SimpleChanges,
   ɵNgModuleTransitiveScopes,
 } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
@@ -21,20 +23,24 @@ const httpOptions = {
   templateUrl: './suggestions.component.html',
   styleUrls: ['./suggestions.component.css'],
 })
-export class SuggestionsComponent implements OnInit {
+export class SuggestionsComponent implements OnChanges {
   suggestion: Suggestions;
-  isLoaded = false;
+  isLoaded = true;
   @Input('inputData') public searchText: string;
 
   constructor(private httpClient: HttpClient) {}
 
-  ngOnInit(): void {
-    this.getSuggestions();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.searchText !== '') {
+      this.getSuggestions();
+    } else {
+      this.isLoaded;
+    }
   }
 
   getSuggestions() {
     let body = new HttpParams().set('userInput', this.searchText);
-
+    this.isLoaded = false;
     this.httpClient
       .post<any>(
         'http://localhost:5000/fetchSuggestion',

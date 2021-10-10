@@ -1,0 +1,38 @@
+<div class="col mb-3 card__master">
+    <div class="movie parent card__custom row">
+        <h2 class="movie mt-1 mb-1 name">{{movieItem.name}}</h2>
+        <div class="movie__preview col-sm-12 text-center">
+            <img class="movie mt-1 mb-1 poster-img" src="{{movieItem.posterIMG}}"
+                alt="Movie poster of {{movieItem.name}}" />
+        </div>
+        <div *ngIf="isExpanded; then thenBlock"></div>
+        <ng-template #thenBlock>
+            <div class="movie__details col-sm-12">
+                <div class="movie mt-1 mb-1 genre">{{movieItem.genre}}</div>
+                <div class="movie mt-1 mb-1 actors">{{movieItem.actors}}</div>
+                <div class="movie mt-1 mb-1 row">
+                    <div class="movie mt-1 mb-1 col release">{{movieItem.release}}</div>
+                    <div class="movie mt-1 mb-1 col runtime">{{movieItem.runtime}}</div>
+                </div>
+                <div class="movie mt-1 mb-1 row">
+                    <div class="movie mt-1 mb-1 col meta-score">
+                        {{movieItem.metaScore}}
+                    </div>
+                    <div class="movie mt-1 mb-1 col imdb-rating">
+                        {{movieItem.imdbRating}}
+                    </div>
+                </div>
+                <div class="movie mt-1 mb-1 plot">{{movieItem.plot}}</div>
+                <div>
+                    <iframe width="100%" class="mt-1 mb-2" [src]="urlSafe" title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen></iframe>
+                </div>
+            </div>
+        </ng-template>
+        <button type="button" (click)="toggleExpand()">
+            <div *ngIf="isExpanded; else collapse">Collapse</div>
+            <ng-template #collapse>Expand</ng-template>
+        </button>
+    </div>
+</div>

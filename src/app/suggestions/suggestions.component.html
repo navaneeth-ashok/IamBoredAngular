@@ -1,21 +1,25 @@
 <div class="container">
-    <p>Based on your search, you might enjoy these</p>
 
 
-    <div class="" *ngIf="!isLoaded">
+    <div class="" *ngIf="!isLoaded; else loadedBlock">
         Loading
     </div>
-    <div class="row" *ngFor="let item of suggestion?.movies">
-        <div class=`mb-3`>
-            <div class="movie parent card__custom row">
-                <h2 class="movie mt-1 mb-1 name">{{item.name}}</h2>
+    <ng-template #loadedBlock>
+        <p>Based on your search, you might enjoy these</p>
+        <div class="filter-buttons mb-3" *ngFor="let item of suggestion?.sugg">
+            <button type="button" class="suggestion__buttons" value={{item.movieTitle}}>
+                {{item.movieTitle}}
+            </button>
+        </div>
+        <div class="row" *ngFor="let item of suggestion?.movies">
+            <div class=`mb-3`>
+                <div class="movie parent card__custom row">
+                    <app-movie [movieData]="item"></app-movie>
 
+                </div>
             </div>
         </div>
-    </div>
-    <div class="filter-buttons mb-3" *ngFor="let item of suggestion?.sugg">
-        <button type="button" class="suggestion__buttons" value={{item.movieTitle}}>
-            {{item.movieTitle}}
-        </button>
-    </div>
+    </ng-template>
+
+
 </div>
