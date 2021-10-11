@@ -27,12 +27,17 @@ export class SuggestionsComponent implements OnChanges {
   suggestion: Suggestions;
   isLoaded = true;
   showResults = false;
+  filterResult = 1;
   @Input('inputData') public searchText: string;
 
   public setSearchString(input: any) {
     this.searchText = input;
     console.log(input);
     this.getSuggestions();
+  }
+
+  public setFilter(input: number) {
+    this.filterResult = input;
   }
 
   constructor(private httpClient: HttpClient) {}
