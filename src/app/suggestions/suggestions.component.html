@@ -27,17 +27,7 @@
             <button type="button" class="btn suggestion__buttons" (click)="setFilter(3)">
                 Movies
             </button>
-            <p>Click on these suggestions to search again</p>
         </div>
-        <ng-container *ngIf="filterResult == 1 || filterResult == 3">
-            <div class="container">
-                <div class="row" *ngFor="let item of suggestion?.movies">
-                    <div class="col m-2 card__master">
-                        <app-movie [movieData]="item"></app-movie>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
         <ng-container *ngIf="filterResult == 1 || filterResult == 2">
             <div class="container">
                 <div class="row">
@@ -47,6 +37,16 @@
                 </div>
             </div>
         </ng-container>
+        <ng-container *ngIf="filterResult == 1 || filterResult == 3">
+            <div class="container">
+                <div class="row" *ngFor="let item of suggestion?.movies">
+                    <div class="col m-2 card__master">
+                        <app-movie [movieData]="item"></app-movie>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
 
     </ng-template>
 

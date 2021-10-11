@@ -1,5 +1,4 @@
 <div class="col m-3 card__master">
-
     <div class="movie parent card__custom row">
         <h2 class="movie mt-1 mb-1 name">{{movieItem.name}}</h2>
         <div class="movie__preview col-sm-3 text-center">
@@ -24,8 +23,6 @@
                         {{movieItem.imdbRating}}
                     </div>
                 </div>
-
-
             </div>
             <div class="movie__details col-sm-3">
                 <iframe width="100%" class="mt-1 mb-2" [src]="urlSafe" title="YouTube video player" frameBorder="0"
@@ -34,11 +31,10 @@
             </div>
         </ng-template>
         <div *ngIf="isMobileDevice()">
-            <button type="button" class="btn" (click)="toggleExpand()">
+            <button type="button" class="" (click)="toggleExpand()">
                 <div *ngIf="isExpanded; else collapse">Close</div>
                 <ng-template #collapse>Read More</ng-template>
             </button>
         </div>
-
     </div>
 </div>

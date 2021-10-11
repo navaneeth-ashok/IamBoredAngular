@@ -8,17 +8,27 @@
 :root {
   --pseudo: #00e095;
   --background: #1d1d1d;
-  --box-shadow: #21211c;
+  --box-shadow: #111111;
   --text-color: #e0e0e0;
-  --logo: #ff7b00;
-  --h2: #e9e9e9;
+  --logo: #00ff95;
+  --h2: #00d1d1;
   --card-background: rgba(66, 66, 66, 90);
 }
 
 body {
-  background-color: var(--background) !important;
+  /* background-color: var(--background) !important; */
   color: var(--text-color) !important;
   font-family: "PT Sans", sans-serif !important;
+  background-image: radial-gradient(
+    circle,
+    #363636,
+    #2c2c2c,
+    #232323,
+    #1a1a1a,
+    #101010
+  );
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h2 {
@@ -37,7 +47,7 @@ h1 {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid rgb(170, 120, 11);
+  border-top: 1px solid rgb(109, 226, 94);
   margin: 1em 0;
   padding: 0;
 }
@@ -145,7 +155,7 @@ img {
   height: 100%;
   margin-left: 0px;
   margin-right: 0px;
-  box-shadow: 0px 5px 15px var(--box-shadow);
+  box-shadow: 0px 15px 25px var(--box-shadow);
 }
 
 /* .card__custom:hover {
@@ -154,11 +164,15 @@ img {
 
 a.track {
   text-decoration: none;
-  color: #c4a27e;
+  color: #83d34e;
 }
 a.track:hover {
-  color: #f09b41;
+  color: #55f041;
   cursor: pointer;
+}
+
+.track h2 {
+  font-size: 1.2em;
 }
 
 .movie__preview {
@@ -247,7 +261,7 @@ input::placeholder {
 button {
   border: none;
   background: none;
-  color: #c4a27e;
+  color: #53b463;
 }
 
 button:hover {
@@ -290,9 +304,9 @@ button img:hover {
 }
 
 .suggestion__buttons {
-  color: #e49733 !important;
+  color: #60be3b !important;
 }
 
 .suggestion__buttons:hover {
-  color: #f88f06;
+  color: #56e932 !important;
 }

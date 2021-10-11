@@ -5,9 +5,10 @@
         <p>{{welcomeObj.welcomeString3}} and press Enter</p>
         <input #searchEntry autocomplete="off" class="form-control  w-25 ms-auto me-auto" type="text" id="userInput"
             placeholder="Type a Movie or Track Name" (change)="updateSearch(searchEntry.value)"
-            aria-label="Movie or Track Title">
+            aria-label="Movie or Track Title" value="{{searchInput}}">
     </div>
     <div class="mt-2 mb-2">
-        <app-suggestions [inputData]="searchInput"></app-suggestions>
+        <app-suggestions [inputData]="searchInput" (updatedSearchString)="updateSearchFromSuggestion($event)">
+        </app-suggestions>
     </div>
 </div>

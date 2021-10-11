@@ -3,8 +3,10 @@ import {
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
   ɵNgModuleTransitiveScopes,
+  EventEmitter,
 } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Movie } from '../movies';
@@ -29,11 +31,10 @@ export class SuggestionsComponent implements OnChanges {
   showResults = false;
   filterResult = 1;
   @Input('inputData') public searchText: string;
+  @Output() updatedSearchString: EventEmitter<any> = new EventEmitter();
 
   public setSearchString(input: any) {
-    this.searchText = input;
-    console.log(input);
-    this.getSuggestions();
+    this.updatedSearchString.emit(input);
   }
 
   public setFilter(input: number) {
@@ -56,7 +57,7 @@ export class SuggestionsComponent implements OnChanges {
     this.isLoaded = false;
     this.httpClient
       .post<any>(
-        'http://localhost:5000/fetchSuggestion',
+        'https://iam-bored-server.herokuapp.com//fetchSuggestion',
         body.toString(),
         httpOptions
       )

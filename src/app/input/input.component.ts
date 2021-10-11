@@ -18,8 +18,12 @@ export class InputComponent implements OnInit {
   public searchInput = '';
 
   updateSearch(abc: string) {
-    console.log(abc);
     this.searchInput = abc;
+  }
+
+  updateSearchFromSuggestion(searchString: string) {
+    console.log('ASDasdsdASDd');
+    this.updateSearch(searchString);
   }
 
   constructor() {}
