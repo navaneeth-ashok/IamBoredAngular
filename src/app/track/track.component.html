@@ -1,1 +1,15 @@
-<p>track works!</p>
+<div class="">
+    <div class="track m-2 parent card__custom row">
+        <h2 class="track mt-1 mb-1 name">{{trackItem.name}}</h2>
+        <img class="track mt-1 mb-1 poster-img" [src]="urlPoster" alt="Album poster of ${{trackItem.name}}" />
+        <div class="text-center mt-2">
+            <a [href]="urlAlbumLink" class="track mb-1 m-1 album__name">
+                {{trackItem.albumName}}
+            </a>
+        </div>
+        <div>
+            <iframe [src]="urlTrackLink" width="98%" height="80" frameBorder="0" allowtransparency="true"
+                allow="encrypted-media" title="Spotify Audio Player"></iframe>
+        </div>
+    </div>
+</div>

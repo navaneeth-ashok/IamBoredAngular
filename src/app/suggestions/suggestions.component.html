@@ -1,8 +1,6 @@
 <div class="container">
-
-
     <div class="" *ngIf="!isLoaded">
-        Loading
+        Waking up the server, checking for movies and music
     </div>
     <div class="" *ngIf="!showResults; else loadedBlock">
         <!-- Empty condition to prevent unwanted loading of component -->
@@ -15,13 +13,19 @@
                 *ngFor="let item of suggestion?.sugg">
                 {{item.movieTitle}}
             </button>
+            <p>Click on these suggestions to search again</p>
         </div>
         <div class="container">
             <div class="row" *ngFor="let item of suggestion?.movies">
                 <div class="col m-2 card__master">
-
                     <app-movie [movieData]="item"></app-movie>
-
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 card__master" *ngFor="let item of suggestion?.tracks">
+                    <app-track [trackData]="item"></app-track>
                 </div>
             </div>
         </div>

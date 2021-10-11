@@ -11,11 +11,12 @@
             <div class="movie__details col-sm-6">
                 <div class="movie mt-1 mb-1 genre">{{movieItem.genre}}</div>
                 <div class="movie mt-1 mb-1 actors">{{movieItem.actors}}</div>
-                <div class="movie mt-1 mb-1 row">
+                <div class="movie mt-3 mb-1 plot">{{movieItem.plot}}</div>
+                <div class="movie mt-3 mb-1 row">
                     <div class="movie mt-1 mb-1 col release">{{movieItem.release}}</div>
                     <div class="movie mt-1 mb-1 col runtime">{{movieItem.runtime}}</div>
                 </div>
-                <div class="movie mt-1 mb-1 row">
+                <div class="movie mt-3 mb-1 row">
                     <div class="movie mt-1 mb-1 col meta-score">
                         {{movieItem.metaScore}}
                     </div>
@@ -23,7 +24,7 @@
                         {{movieItem.imdbRating}}
                     </div>
                 </div>
-                <div class="movie mt-1 mb-1 plot">{{movieItem.plot}}</div>
+
 
             </div>
             <div class="movie__details col-sm-3">
@@ -32,9 +33,12 @@
                     allowFullScreen></iframe>
             </div>
         </ng-template>
-        <button type="button" class="btn" (click)="toggleExpand()">
-            <div *ngIf="isExpanded; else collapse">Close</div>
-            <ng-template #collapse>Read More</ng-template>
-        </button>
+        <div *ngIf="isMobileDevice()">
+            <button type="button" class="btn" (click)="toggleExpand()">
+                <div *ngIf="isExpanded; else collapse">Close</div>
+                <ng-template #collapse>Read More</ng-template>
+            </button>
+        </div>
+
     </div>
 </div>

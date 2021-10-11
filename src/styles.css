@@ -1,45 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
 
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
 :root {
-  --pseudo: rgb(9, 111, 179);
+  --pseudo: #00e095;
+  --background: #1d1d1d;
+  --box-shadow: #21211c;
+  --text-color: #e0e0e0;
+  --logo: #ff7b00;
+  --h2: #e9e9e9;
+  --card-background: rgba(66, 66, 66, 90);
 }
 
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2,
-h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
 body {
-  margin: 2em;
+  background-color: var(--background) !important;
+  color: var(--text-color) !important;
+  font-family: "PT Sans", sans-serif !important;
 }
-body,
-input[type="text"],
-button {
-  color: #333;
-  font-family: Cambria, Georgia, serif;
-}
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap");
 
 h2 {
   font-size: 1.2em;
-  color: #39adf0;
+  color: var(--h2);
 }
 
 h1 {
-  color: #2c7ca1;
-  font-size: 4em;
+  color: var(--logo);
+  font-size: 5em !important;
   cursor: pointer;
   font-family: "Lato", sans-serif;
 }
@@ -52,10 +41,15 @@ input {
 }
 
 input[type="text"] {
-  background-color: rgb(255, 255, 255) !important;
-  color: rgb(58, 58, 58) !important;
+  background-color: rgb(75, 75, 75) !important;
+  color: var(--text-color) !important;
   min-width: 270px;
   padding-bottom: 8px;
+  border: none;
+}
+
+.center-data-loaded {
+  position: relative;
 }
 
 .track img {
@@ -129,19 +123,25 @@ img {
 }
 
 .card__custom {
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
-  background-color: #ffffff;
+  /* background-color: var(--card-background); */
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    180deg,
+    rgba(68, 68, 68, 1) 0%,
+    rgba(37, 37, 37, 1) 89%
+  );
   transition: all 0.2s linear;
   height: 100%;
   margin-left: 0px;
   margin-right: 0px;
-  box-shadow: 0px 5px 15px grey;
+  box-shadow: 0px 5px 15px var(--box-shadow);
 }
 
-.card__custom:hover {
+/* .card__custom:hover {
   background-color: #ececec;
-}
+} */
 
 a.track {
   text-decoration: none;
@@ -204,19 +204,19 @@ footer a:hover {
 }
 
 input::-webkit-input-placeholder {
-  color: rgb(56, 56, 56) !important;
+  color: var(--text-color) !important;
 }
 
 input::-moz-placeholder {
-  color: rgb(56, 56, 56) !important;
+  color: var(--text-color) !important;
 }
 
 input::-ms-placeholder {
-  color: rgb(56, 56, 56) !important;
+  color: var(--text-color) !important;
 }
 
 input::placeholder {
-  color: rgb(56, 56, 56) !important;
+  color: var(--text-color) !important;
 }
 
 .search {
@@ -280,6 +280,10 @@ button img:hover {
   padding-right: 10px;
 }
 
+.suggestion__buttons {
+  color: #e49733 !important;
+}
+
 .suggestion__buttons:hover {
-  color: #fda839;
+  color: #f88f06;
 }
