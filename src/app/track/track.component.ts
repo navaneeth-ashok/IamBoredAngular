@@ -9,6 +9,8 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 })
 export class TrackComponent implements OnInit {
   @Input('trackData') public trackItem: Track;
+
+  // make sure the URLs are pointing to secure source
   public urlPoster: SafeResourceUrl;
   public urlAlbumLink: SafeResourceUrl;
   public urlTrackLink: SafeResourceUrl;

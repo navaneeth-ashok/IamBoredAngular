@@ -11,6 +11,7 @@ export class MovieComponent implements OnInit {
   @Input('movieData') public movieItem: Movie;
   public urlSafe: SafeResourceUrl;
 
+  // Movie card is collapsed by default on mobile devices to save on the real estate space
   public isExpanded: boolean = !this.isMobileDevice();
 
   @HostListener('window:resize', ['$event'])
@@ -19,6 +20,7 @@ export class MovieComponent implements OnInit {
     this.isExpanded = !this.isMobileDevice();
   }
 
+  // src : https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
   public isMobileDevice() {
     var check = false;
     (function (a) {
@@ -35,6 +37,7 @@ export class MovieComponent implements OnInit {
     return check;
   }
 
+  // function to expand and collapse the movie card
   public toggleExpand() {
     this.isExpanded = !this.isExpanded;
   }
