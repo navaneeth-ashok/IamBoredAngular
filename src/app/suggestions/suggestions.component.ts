@@ -29,6 +29,12 @@ export class SuggestionsComponent implements OnChanges {
   showResults = false;
   @Input('inputData') public searchText: string;
 
+  public setSearchString(input: any) {
+    this.searchText = input;
+    console.log(input);
+    this.getSuggestions();
+  }
+
   constructor(private httpClient: HttpClient) {}
 
   ngOnChanges(changes: SimpleChanges): void {

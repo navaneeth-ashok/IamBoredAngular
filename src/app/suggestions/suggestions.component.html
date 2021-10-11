@@ -7,14 +7,16 @@
         <!-- Swap the order later for cleaner code -->
     </div>
     <ng-template #loadedBlock>
-        <p>Based on your search, you might enjoy these</p>
+
         <div class="filter-buttons mb-3">
             <button type="button" class="btn suggestion__buttons" value={{item.movieTitle}}
-                *ngFor="let item of suggestion?.sugg">
+                (click)="setSearchString(item.movieTitle)" *ngFor="let item of suggestion?.sugg">
                 {{item.movieTitle}}
             </button>
             <p>Click on these suggestions to search again</p>
         </div>
+        <span class="hr"></span>
+        <p>Based on your search, you might enjoy these</p>
         <div class="container">
             <div class="row" *ngFor="let item of suggestion?.movies">
                 <div class="col m-2 card__master">
