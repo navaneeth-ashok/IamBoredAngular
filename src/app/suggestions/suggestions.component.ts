@@ -67,7 +67,7 @@ export class SuggestionsComponent implements OnChanges {
     // rendering the UI
     this.httpClient
       .post<any>(
-        'https://iam-bored-server.herokuapp.com//fetchSuggestion',
+        'https://iam-bored-server.herokuapp.com/fetchSuggestion',
         body.toString(),
         httpOptions
       )
