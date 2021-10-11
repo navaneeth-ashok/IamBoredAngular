@@ -1,23 +1,27 @@
 <div class="container">
 
 
-    <div class="" *ngIf="!isLoaded; else loadedBlock">
+    <div class="" *ngIf="!isLoaded">
         Loading
+    </div>
+    <div class="" *ngIf="!showResults; else loadedBlock">
+        <!-- Empty condition to prevent unwanted loading of component -->
+        <!-- Swap the order later for cleaner code -->
     </div>
     <ng-template #loadedBlock>
         <p>Based on your search, you might enjoy these</p>
-        <div class="filter-buttons mb-3" *ngFor="let item of suggestion?.sugg">
-            <button type="button" class="suggestion__buttons" value={{item.movieTitle}}>
+        <div class="filter-buttons mb-3">
+            <button type="button" class="btn suggestion__buttons" value={{item.movieTitle}}
+                *ngFor="let item of suggestion?.sugg">
                 {{item.movieTitle}}
             </button>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-sm-4 mb-3 card__master" *ngFor="let item of suggestion?.movies">
-                    <div class="movie parent card__custom row">
-                        <app-movie [movieData]="item"></app-movie>
+            <div class="row" *ngFor="let item of suggestion?.movies">
+                <div class="col m-2 card__master">
 
-                    </div>
+                    <app-movie [movieData]="item"></app-movie>
+
                 </div>
             </div>
         </div>

@@ -1,13 +1,13 @@
-<p>{{welcomeObj.welcomeString1}}</p>
-<p>{{welcomeObj.welcomeString2}}</p>
-<p>{{welcomeObj.welcomeString3}}</p>
-
-<div class="">
-
-    <label for="userInput">Movie or Track</label>
+<div class="container text-center">
+    <p>{{welcomeObj.welcomeString1}}</p>
+    <p>{{welcomeObj.welcomeString2}}</p>
+    <p>{{welcomeObj.welcomeString3}}</p>
     <input #searchEntry autocomplete="off" class="form-control  w-25 ms-auto me-auto" type="text" id="userInput"
-        placeholder="Type a Movie or Track Name" (change)="updateSearch(searchEntry.value)">
-    <app-suggestions [inputData]="searchInput"></app-suggestions>
+        placeholder="Type a Movie or Track Name" (change)="updateSearch(searchEntry.value)"
+        aria-label="Movie or Track Title">
+    <div class="mt-2 mb-2">
+        <app-suggestions [inputData]="searchInput"></app-suggestions>
+    </div>
     <div class="" *ngIf="searchInput === ''">
         <p>{{welcomeObj.welcomeString4}}</p>
         <p>{{welcomeObj.welcomeString5}}</p>

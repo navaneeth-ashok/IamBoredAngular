@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
+
+:root {
+  --pseudo: rgb(9, 111, 179);
+}
+
 h1 {
   color: #369;
   font-family: Arial, Helvetica, sans-serif;
@@ -23,4 +28,258 @@ button {
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap");
+
+h2 {
+  font-size: 1.2em;
+  color: #39adf0;
+}
+
+h1 {
+  color: #2c7ca1;
+  font-size: 4em;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+
+input {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+input[type="text"] {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(58, 58, 58) !important;
+  min-width: 270px;
+  padding-bottom: 8px;
+}
+
+.track img {
+  padding: 0;
+}
+
+img {
+  border-radius: 2px;
+  max-width: 100%;
+}
+
+.form-control {
+  border: none;
+}
+
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+
+.form-control:active {
+  border-color: none;
+  box-shadow: none;
+}
+
+.genre {
+  text-align: center;
+  font-style: italic;
+}
+
+.actors::before {
+  content: "Actors\a";
+  white-space: pre;
+  color: var(--pseudo);
+}
+
+.release::before {
+  content: "Release Date\a";
+  white-space: pre;
+  color: var(--pseudo);
+}
+
+.runtime::before {
+  content: "Runtime\a";
+  white-space: pre;
+  color: var(--pseudo);
+}
+
+.meta-score::before {
+  content: "Metascore ";
+  color: var(--pseudo);
+}
+
+.imdb-rating::before {
+  content: "IMDB ";
+  color: var(--pseudo);
+}
+.plot::before {
+  content: "Plot\a";
+  color: var(--pseudo);
+  white-space: pre;
+}
+
+.movie-rec .col-sm-4 {
+  transition: all 0.2s ease-in-out;
+}
+
+.card__master,
+.card__custom {
+  min-height: 540px;
+}
+
+.card__custom {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  transition: all 0.2s linear;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  box-shadow: 0px 5px 15px grey;
+}
+
+.card__custom:hover {
+  background-color: #ececec;
+}
+
+a.track {
+  text-decoration: none;
+  color: #c4a27e;
+}
+a.track:hover {
+  color: #f09b41;
+  cursor: pointer;
+}
+
+.movie__preview {
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.album__name {
+  text-align: center !important;
+  margin-top: 10px;
+}
+
+.movie-rec,
+.track-rec {
+  padding: 0;
+}
+
+.intro-color {
+  color: #c4a27e;
+}
+
+div.bmc-btn-container {
+  text-align: center;
+}
+
+a.bmc-btn {
+  height: 35px;
+  background-color: #ffa631 !important;
+  padding-right: 30px;
+}
+
+a.bmc-btn:hover {
+  color: black;
+  background-color: #fa8745 !important;
+}
+
+footer {
+  min-height: 50px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  position: sticky;
+  top: 100vh;
+}
+
+footer a {
+  color: burlywood;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: antiquewhite;
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(56, 56, 56) !important;
+}
+
+input::-moz-placeholder {
+  color: rgb(56, 56, 56) !important;
+}
+
+input::-ms-placeholder {
+  color: rgb(56, 56, 56) !important;
+}
+
+input::placeholder {
+  color: rgb(56, 56, 56) !important;
+}
+
+.search {
+  background-image: url("/src/images/outline_search_white_24dp.png");
+  width: 24px;
+  display: inline-block;
+  height: 24px;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: -30px;
+  filter: invert(18%) sepia(0%) saturate(1985%) hue-rotate(154deg)
+    brightness(96%) contrast(91%);
+}
+
+.form-control {
+  display: inline-block;
+}
+
+button {
+  border: none;
+  background: none;
+  color: #c4a27e;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  color: #f09b41;
+}
+
+.button__active {
+  color: #f09b41;
+}
+
+button img {
+  filter: invert(79%) sepia(9%) saturate(7038%) hue-rotate(330deg)
+    brightness(99%) contrast(89%);
+  transition: all 0.2s linear;
+}
+
+button img:hover {
+  transform: translateY(5px);
+  cursor: pointer;
+  /* transform: scale(1.1); */
+}
+
+.filter-buttons button {
+  font-size: 1.1em;
+  margin: 0 10px;
+}
+
+.filter-buttons button:hover {
+  cursor: pointer;
+  color: #fda839;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.suggestion__buttons:hover {
+  color: #fda839;
 }

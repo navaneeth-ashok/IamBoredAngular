@@ -26,12 +26,14 @@ const httpOptions = {
 export class SuggestionsComponent implements OnChanges {
   suggestion: Suggestions;
   isLoaded = true;
+  showResults = false;
   @Input('inputData') public searchText: string;
 
   constructor(private httpClient: HttpClient) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.searchText !== '') {
+      this.showResults = true;
       this.getSuggestions();
     } else {
       this.isLoaded;
@@ -95,8 +97,6 @@ export class SuggestionsComponent implements OnChanges {
           movieSuggestionArray,
           titleSuggestionArray
         );
-
-        console.log(suggestionItem);
         this.suggestion = suggestionItem;
         this.isLoaded = true;
       });
