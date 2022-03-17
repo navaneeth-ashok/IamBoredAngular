@@ -1,6 +1,11 @@
-# IamboredAng
+# I am Bored Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+
+A single page movie and song recommendation web-app made with React and Express. Web-app fetches the results for the user input from an ExpressJS based server. The suggestions are shown in card format, with Spotify and Youtube integration. This web-app is mobile friendly and can be installed in devices as a PWA. This is the Angular version of the app.
+
+## ReactJS App
+If you're interested in the ReactJS version of the same, please use [https://iambored.co.in/](IamBored) or the mirror [https://iambored.navaneeth.dev/](IamBored)
 
 ## Development server
 
