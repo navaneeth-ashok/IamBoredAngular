@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 A single page movie and song recommendation web-app made with React and Express. Web-app fetches the results for the user input from an ExpressJS based server. The suggestions are shown in card format, with Spotify and Youtube integration. This web-app is mobile friendly and can be installed in devices as a PWA. This is the Angular version of the app.
 
 ## ReactJS App
-If you're interested in the ReactJS version of the same, please use [https://iambored.co.in/](IamBored) or the mirror [https://iambored.navaneeth.dev/](IamBored)
+If you're interested in the ReactJS version of the same, please use [IamBored](https://iambored.co.in/) or the mirror [IamBored](https://iambored.navaneeth.dev/)
 
 ## Development server
 
